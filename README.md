@@ -9,7 +9,7 @@ The AI coding client supplies creative decisions and framework-specific source. 
 Requires Node.js 20.20+ and npm. Browser tools need Chromium or compatible Chrome. No hosting, account, or paid service is required.
 
 ```sh
-git clone https://github.com/YOUR_ORGANIZATION/aestheticforge-mcp.git
+git clone https://github.com/2peng23/aestheticforge-mcp.git
 cd aestheticforge-mcp
 npm ci
 npx playwright install chromium
@@ -18,7 +18,7 @@ npm test
 npm run smoke
 ```
 
-The URL above is a publication placeholder; this checkout has not been published. `npm install` also works and builds through `prepare`. On Linux, Playwright may need system packages: `npx playwright install --with-deps chromium`.
+`npm install` also works and builds through `prepare`. On Linux, Playwright may need system packages: `npx playwright install --with-deps chromium`.
 
 ```sh
 node /absolute/path/aestheticforge-mcp/dist/server/cli.js --root /absolute/project
