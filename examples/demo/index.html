@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fieldnotes — sample project</title>
+    <style>
+      :root {
+        --ink: #18342d;
+        --paper: #f7f4ec;
+        --accent: #aa391d;
+        --space-unit: 8px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font:
+          17px/1.5 system-ui,
+          sans-serif;
+      }
+      header,
+      main {
+        width: min(100% - 48px, 1100px);
+        margin: auto;
+      }
+      header {
+        padding: 24px 0;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      nav {
+        display: flex;
+        gap: 24px;
+      }
+      a {
+        color: inherit;
+      }
+      h1 {
+        font-size: clamp(36px, 6vw, 72px);
+        line-height: 1.05;
+        max-width: 800px;
+        letter-spacing: -0.04em;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      main {
+        padding: 48px 0;
+      }
+      .workspace {
+        min-width: 1000px;
+        padding: 24px;
+        border: 1px solid;
+      }
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      input,
+      button {
+        font: inherit;
+        padding: 12px;
+        border: 1px solid var(--ink);
+      }
+      button {
+        background: var(--ink);
+        color: var(--paper);
+        cursor: pointer;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      label {
+        display: block;
+      }
+      li {
+        padding: 12px 0;
+        border-bottom: 1px solid #c5cec7;
+      }
+      footer {
+        margin-top: 40px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">FIELDNOTES / sample</a>
+      <nav aria-label="Main">
+        <a href="#notes">Notes</a><a href="/about.html">About</a>
+      </nav>
+    </header>
+    <main>
+      <p>YOUR TEAM'S WORKING MEMORY</p>
+      <h1>Keep the next good idea close.</h1>
+      <p>
+        This demonstration app stores notes in this browser tab. It is sample
+        content.
+      </p>
+      <section class="workspace" id="notes">
+        <h2>Team notes</h2>
+        <form id="note-form">
+          <input id="note" name="note" required /><button type="submit">
+            Save note
+          </button>
+        </form>
+        <p id="feedback" role="status" aria-live="polite"></p>
+        <ul id="note-list">
+          <li>Review the garden project on Friday.</li>
+          <li>Bring the field sketches to the next workshop.</li>
+        </ul>
+      </section>
+      <footer><a href="/about.html">About this sample</a></footer>
+    </main>
+    <script>
+      document
+        .querySelector("#note-form")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          const input = document.querySelector("#note");
+          const note = document.createElement("li");
+          note.textContent = input.value;
+          document.querySelector("#note-list").append(note);
+          input.value = "";
+          document.querySelector("#feedback").textContent = "Note saved.";
+        });
+    </script>
+  </body>
+</html>

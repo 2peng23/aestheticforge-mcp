@@ -1,0 +1,16 @@
+# Verification record
+
+Executed locally on macOS, November 13, 2026 (Asia/Manila), using Node20.20, npm10.8 and installed Google Chrome. Optional Lighthouse was separately run on Node25.8 because current Lighthouse requires Node22.19+.
+
+- `npm run build`: passed with strict TypeScript and unused-local/parameter checks.
+- `npm test`: 15 tests passed, covering path traversal, protected and external symlink aliases, package/network/cloud credential exclusions, dry-run/hash-checked writes, source/framework/token evidence, route conventions, known contrast calculations, malformed tool input, origin validation, recursive artifact redaction and oversized PNG rejection.
+- `npm run smoke`: real official SDK v2 stdio client discovered all60 tool definitions, obtained structured discovery results and received an MCP error for an unauthorized path; stderr was empty.
+- `npm run browser-test`: separate real Chrome integration proved that a page could not request a second loopback server, rejected password/email fills, and exercised both passing and failing text assertions.
+- `npm run demo`: passed. Latest acceptance report is `artifacts/2026-11-13T01-16-44-445Z/acceptance-report.json`, accompanied by before/after width-matrix PNGs and `diff-390.png`. Baseline overflow counts were7 at320px,6 at390px,6 at768px and0 at1440px. After a real hash-checked source correction, overflow was0 at all eleven widths320–1920. Axe violations changed from1 to0. The note-saving behavior and live feedback passed real browser assertions. The390px screenshot changed30778 pixels.
+- Optional actual Lighthouse13.6.0: saved `artifacts/lighthouse-current-demo/report.json`. On the deliberately defective baseline sample, measured category scores were performance1.00, accessibility0.94, best practices1.00, SEO0.82 and agentic browsing0.25. These are a single lab run, not a quality/compliance claim. The optional package was installed only for this probe and then pruned; it is not a shipped dependency.
+- `npm pack --dry-run` and actual `npm pack`: passed, with compiled executable, declaration files, documentation and example sources included. An actual tarball was installed into an isolated temporary directory with production dependencies only: installation added10 packages, the packaged CLI exposed all60 tools, structured framework detection succeeded, and stderr was empty.
+- `npm audit` and `npm audit --omit=dev`: zero known vulnerabilities in the final default dependency tree at verification time.
+
+Generated artifacts are intentionally ignored by Git. The sample retains its deliberate baseline defects; the demo restores its source after measuring the improvement. No GitHub/npm publication or client configuration installation has occurred.
+
+Not demonstrated: Windows/Linux execution, installed client GUI workflows, every framework compiler, physical mobile devices/keyboards, screen-reader workflows, full WCAG2.2 conformance, field Core Web Vitals, aesthetic judgment, or an autonomous design-authoring model. The AI client remains responsible for creative decisions, framework-native source and host application build/test commands. Static source discovery and geometry rules retain the limitations documented in methodology.md.
